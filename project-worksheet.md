@@ -120,8 +120,10 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | IngredientPage | This will render the header include the nav | 
 | MyRecipesPage | This will render the header include the nav | 
 
+### Priority list
+
 | Component | Priority | Estimated Time  | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
+| :---: | :---: |  :---: | :---: | :---: |
 | Adding Search Form | H | 1hrs |  |
 | Creating each of the component pages | H | 3hrs|  |
 | Setting up the search and api | H | 2hrs|  |
