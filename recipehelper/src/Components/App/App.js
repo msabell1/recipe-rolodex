@@ -2,12 +2,14 @@ import { Routes, Route, Link } from 'react-router-dom';
 // import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import LandingPage from '../LandingPage/LandingPage';
-import SearchResults from '../SearchResults/SearchResults';
-import RecipeBook from '../RecipeBook/RecipeBook';
-import RecipeResult from '../RecipeResult/RecipeResult';
+import LandingPage from '../LandingPage/LandingPage.js';
+import SearchResults from '../SearchResults/SearchResults.js';
+import RecipeBook from '../RecipeBook/RecipeBook.js';
+// import RecipeResult from '../RecipeResult/RecipeResult';
 
 function App() {
+
+  const [myRecipes, setMyRecipes] = useState([]);
 
   return (
     <div className="App">
@@ -35,9 +37,11 @@ function App() {
       </nav>
       <div className="mainContainer">
         <Routes>
-          <Route path='/' component={<LandingPage />} />
-          <Route path='/search/' component={<SearchResults />} />
-          <Route path='/recipebook/' render={() => <RecipeBook />} />
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/search/' element={
+            <SearchResults />}
+          />
+          <Route path='/recipebook/' element={<RecipeBook />} />
         </Routes>
       </div>
     </div>
