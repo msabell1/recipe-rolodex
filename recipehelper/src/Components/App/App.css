@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 60s linear;
+    }
+  } */
+
+
+/* @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  } */
+
+nav {
+  border: 1px solid black;
+  /* background-image: url(https://unsplash.com/photos/IxBCafdQItg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+ul {
+  list-style: none;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+li {
+  margin: 0px 30px;
+}
+
+.mainContainer {
+  border: 1px solid black
+}
