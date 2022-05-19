@@ -1,0 +1,42 @@
+.spacer {
+    flex: 1;
+}
+
+.navBar_container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.navBar {
+    position: relative;
+}
+
+.navBar_links li {
+    color: blue;
+    text-decoration: none;
+}
+
+.navBar_links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .navBar_links {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .siteTitle {
+        margin-left: 0;
+    }
+
+    .hamburger_container {
+        display: none;
+    }
+}
