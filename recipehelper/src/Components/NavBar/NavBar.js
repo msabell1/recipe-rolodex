@@ -17,7 +17,7 @@ const NavBar = ({ handleToggle, navbarOpen, closeMenu }) => {
                 </h1>
                 <div className="spacer" />
                 <div className="navBar_links">
-                    <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+                    <ul>
                         <li>
                             <Link
                                 to="/search/"
@@ -43,4 +43,4 @@ const NavBar = ({ handleToggle, navbarOpen, closeMenu }) => {
     )
 }
 
-export default Navbar;
+export default NavBar;

@@ -10,3 +10,4 @@ const Hamburger = ({ navBarOpen, handleToggle }) => {
         </button>
     )
 }
+export default Hamburger;
