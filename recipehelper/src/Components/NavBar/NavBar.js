@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Hamburger from './Hamburger'
 import './NavBar.css';
 
-const NavBar = ({ handleToggle, navbarOpen, closeMenu }) => {
+const NavBar = ({ handleToggle, closeMenu }) => {
 
     return (
         <div className="navBar">
@@ -10,9 +10,10 @@ const NavBar = ({ handleToggle, navbarOpen, closeMenu }) => {
                 <div className="hamburger_container">
                     <Hamburger handleToggle={handleToggle} />
                 </div>
+                <div className="spacer" />
                 <h1 className="siteTitle">
                     <Link to='/'>
-                        Recipe Helper
+                        Recipe Rolodex
                     </Link>
                 </h1>
                 <div className="spacer" />

@@ -1,7 +1,7 @@
 .card {
     min-width: 300px;
     margin: 10px;
-
+    padding: 10px;
 }
 
 @media (min-width: 40em) {
