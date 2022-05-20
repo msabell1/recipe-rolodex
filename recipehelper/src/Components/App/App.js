@@ -79,11 +79,18 @@ function App() {
   }
 
 
+  const handleAddToRecipeCardList =(recipe) => {
+    setMyRecipes([...myRecipes,recipe]);
+  }
+
+
   return (
     <div className="App">
       <div>
+        <div>
         <Navbar handleToggle={handleToggle} closeMenu={closeMenu} />
         <SideBar closeMenu={closeMenu} navbarOpen={navbarOpen} />
+        </div>
         <div>
           <Routes>
             <Route path='/'
@@ -106,6 +113,7 @@ function App() {
               element={
                 <RecipeResult
                   selectedRecipe={selectedRecipe}
+                  handleAddToRecipeCardList={handleAddToRecipeCardList}
                 />}
             />
           </Routes>
