@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import RecipeList from '../RecipeList/RecipeList';
 
-const SearchResults = ({ handleSelectedRecipe, handleSearchSubmit, fetchResults, handleSearchChange, searchValue}) => {
-
+const SearchResults = ({ handleSelectedRecipe, handleSearchSubmit, fetchResults, handleSearchChange, searchValue }) => {
     return (
         <>
             <h1>Search for new recipes</h1>

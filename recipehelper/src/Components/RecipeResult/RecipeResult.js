@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const RecipeResult = ({ selectedRecipe }) => {
 
-    console.log('Selected Recipe: ', selectedRecipe)
+    const recipe = selectedRecipe;
 
-    return <h1>This is the recipe result page</h1>
+    console.log('Selected Recipe: ', recipe.recipe.label);
+
+    return (
+        <div>
+
+            <h1>{recipe.recipe.label}</h1>
+        </div>
+    )
 }
 export default RecipeResult;

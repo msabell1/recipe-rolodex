@@ -35,10 +35,19 @@ function App() {
   const [fetchResults, setFetchResults] = useState([]);
   const [queryValue, setQueryValue] = useState(null);
   const [searchValue, setSearchValue] = useState('');
-  const [selectedRecipe, setSelectedRecipe] = useState([]);
+  const [selectedRecipe, setSelectedRecipe] = useState({});
 
   const handleSelectedRecipe = (id) => {
-    setSelectedRecipe(fetchResults.filter(recipe => recipe.id !== id));
+    console.log(`handleSelectedRecipe selected for ${id}`);
+
+    setSelectedRecipe(fetchResults.filter((recipe) => {
+      return recipe.recipe.uri === id
+    })[0]);
+
+    console.log('selectedRecipe: ', selectedRecipe);
+
+    setFetchResults([]);
+    setQueryValue(null);
   }
 
   const fetchAllRecipes = () => {
