@@ -6,7 +6,8 @@ const SearchResults = ({
     fetchResults,
     handleSearchChange,
     searchValue,
-    handleAddToRecipeCardList }) => {
+    handleAddToRecipeCardList,
+}) => {
     return (
         <>
             <h1>Search for new recipes</h1>

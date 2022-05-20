@@ -1,9 +1,9 @@
-import RecipeList from '../RecipeList/RecipeList.js';
+import RecipeCards from './RecipeCards'
 
-const RecipeBook = ({
+const MyRecipeCards = ({
     myRecipes,
     handleSelectedRecipe,
-    handleAddToRecipeCardList
+    handleRemoveFromRecipeCardList
 }) => {
     const headerMessage = myRecipes.length > 0 ?
         `You have ${myRecipes.length} recipes in your rolodex` :
@@ -14,13 +14,13 @@ const RecipeBook = ({
             <header>
                 <h1>{headerMessage}</h1>
             </header>
-            <RecipeList
-                fetchResults={myRecipes}
+            <RecipeCards
+                myRecipes={myRecipes}
                 handleSelectedRecipe={handleSelectedRecipe}
-                handleAddToRecipeCardList={handleAddToRecipeCardList}
+                handleRemoveFromRecipeCardList={handleRemoveFromRecipeCardList}
             />
         </>
 
     )
 }
-export default RecipeBook;
+export default MyRecipeCards;

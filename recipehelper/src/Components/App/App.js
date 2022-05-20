@@ -1,34 +1,37 @@
-import { Routes, Route, Link } from 'react-router-dom';
-// import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Routes, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import apiData from '../../api';
 import LandingPage from '../LandingPage/LandingPage.js';
 import SearchResults from '../SearchResults/SearchResults.js';
-import RecipeBook from '../RecipeBook/RecipeBook.js';
+import MyRecipeCards from '../MyRecipeCards/MyRecipeCards.js';
 import Navbar from '../NavBar/NavBar';
 import SideBar from '../NavBar/SideBar';
 import RecipeResult from '../RecipeResult/RecipeResult';
-import apiData from '../../api';
 
 function App() {
 
   const [myRecipes, setMyRecipes] = useState([]);
+  const [navbarOpen, setNavbarOpen] = useState(false)
+  const [fetchResults, setFetchResults] = useState([]);
+  const [queryValue, setQueryValue] = useState(null);
+  const [searchValue, setSearchValue] = useState('');
+  const [selectedRecipe, setSelectedRecipe] = useState({});
 
-  // handleAddToRecipeCardList 
   const handleAddToRecipeCardList = (recipe) => {
     setMyRecipes([...myRecipes, recipe]);
-    console.log(myRecipes)
   }
 
-  // handleRemoveFromRecipeBook 
-
-
+  const handleRemoveFromRecipeCardList = (recipe) => {
+    const filteredRecipeList = myRecipes.filter((myRecipe) => {
+      return myRecipe.recipe.label !== recipe.recipe.label
+    })
+    setMyRecipes(filteredRecipeList);
+  }
 
   // functions for NavBar and SideBar Components
-  const [navbarOpen, setNavbarOpen] = useState(false)
-
   const handleToggle = () => {
-    setNavbarOpen(navBarState => !navBarState)
+    setNavbarOpen(!navbarOpen)
   }
 
   const closeMenu = () => {
@@ -36,36 +39,25 @@ function App() {
   }
 
   // States and functions for SearchResults and RecipeList Components
-  const [fetchResults, setFetchResults] = useState([]);
-  const [queryValue, setQueryValue] = useState(null);
-  const [searchValue, setSearchValue] = useState('');
-  const [selectedRecipe, setSelectedRecipe] = useState({});
-
-
-  const handleSelectedRecipe = (id) => {
-    setSelectedRecipe(fetchResults.filter((recipe) => {
-      return recipe.recipe.uri === id
-    })[0]);
-    console.log('selectedRecipe: ', selectedRecipe);
-    setFetchResults([]);
-    setQueryValue(null);
-  }
 
   const fetchAllRecipes = () => {
-    console.log(queryValue === null ? 'queryValue is empty' : `queryValue: ${queryValue}`);
     if (queryValue === null) return 0;
-
     fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${queryValue}&app_id=${apiData.id}&app_key=${apiData.key}&random=true`)
       .then(response => response.json())
       .then(res => {
-        console.log(res);
         setFetchResults(res.hits);
       })
       .catch(err => console.error(err));
   };
 
+  const handleSelectedRecipe = (id) => {
+    setSelectedRecipe(fetchResults.filter((recipe) => {
+      return recipe.recipe.uri === id
+    })[0]);
+    setQueryValue(null);
+  }
+
   useEffect(() => {
-    console.log(`useEffect ran`)
     fetchAllRecipes();
   }, [queryValue])
 
@@ -76,11 +68,7 @@ function App() {
   const handleSearchSubmit = async (event) => {
     event.preventDefault();
     setQueryValue(searchValue.replace(/\s/g, '%'));
-    setSearchValue('');
   }
-
-
-
 
 
   return (
@@ -113,19 +101,20 @@ function App() {
                   handleSelectedRecipe={handleSelectedRecipe}
                 />}
             />
-            <Route path='/recipebook/'
-              element={
-                <RecipeBook
-                  myRecipes={myRecipes}
-                  handleSelectedRecipe={handleSelectedRecipe}
-                  handleAddToRecipeCardList={handleAddToRecipeCardList}
-                />}
-            />
             <Route path='/recipe/'
               element={
                 <RecipeResult
                   selectedRecipe={selectedRecipe}
                   handleAddToRecipeCardList={handleAddToRecipeCardList}
+                />}
+            />
+            <Route path='/recipebook/'
+              element={
+                <MyRecipeCards
+                  myRecipes={myRecipes}
+                  handleSelectedRecipe={handleSelectedRecipe}
+                  handleAddToRecipeCardList={handleAddToRecipeCardList}
+                  handleRemoveFromRecipeCardList={handleRemoveFromRecipeCardList}
                 />}
             />
           </Routes>

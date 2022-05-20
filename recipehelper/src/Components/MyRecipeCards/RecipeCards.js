@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom"
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup'
-import './RecipeList.css';
 
-const RecipeList = ({
-    fetchResults,
-    handleSelectedRecipe
+const RecipeCards = ({
+    myRecipes,
+    handleSelectedRecipe,
+    handleRemoveFromRecipeCardList
 }) => {
 
-    let recipeListItems = fetchResults.map((recipe) => {
-        const recipeId = recipe.recipe.uri;
+    let recipeListItems = myRecipes.map((recipe) => {
+        const uri = recipe.recipe.uri;
+        const recipeId = `my_card_${recipe.recipe.uri}`;
 
         return (
             <Card tyle={{ width: '18rem' }} key={recipeId}>
@@ -19,9 +20,10 @@ const RecipeList = ({
                     <Card.Text>Recipe source:<a href={recipe.recipe.url} target='_blank'>{recipe.recipe.source}</a>
                     </Card.Text>
                 </Card.Body>
-                <Link to={'/recipe/'} onClick={() => { handleSelectedRecipe(recipeId) }}>
-                    Check it out!
+                <Link to={'/recipe/'} onClick={() => { handleSelectedRecipe(uri) }}>
+                    Check out recipe!
                 </Link>
+                <input type="button" onClick={() => { handleRemoveFromRecipeCardList(recipe) }} value='Remove from cards' />
 
             </Card>
         )
@@ -35,4 +37,4 @@ const RecipeList = ({
 
 }
 
-export default RecipeList;
+export default RecipeCards;

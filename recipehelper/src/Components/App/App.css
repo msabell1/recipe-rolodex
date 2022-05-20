@@ -2,10 +2,22 @@
   text-align: center;
 }
 
+h1 {
+  inline-size: 500px;
+  text-align: center;
+}
+
 ul {
   list-style: none;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
 
 li {
   margin: 0px 30px;
@@ -13,15 +25,20 @@ li {
 
 Link {
   text-decoration: none;
+  color: inherit;
 }
 
 .haburger-icon {
   background: transparent;
-    border: none;
+  border: none;
+}
+
+.menuNav li{
+  align-items: center;
 }
 
 .menuNav li:first-child {
-  margin-top: 7rem;
+  margin-top: 4rem;
 }
 
 header .recipe-header {

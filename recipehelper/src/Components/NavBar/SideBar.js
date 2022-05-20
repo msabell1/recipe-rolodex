@@ -6,8 +6,8 @@ const SideBar = ({ navbarOpen, closeMenu, handleToggle }) => {
     let sideBarClass = navbarOpen ? "sideBar open" : "sideBar";
     return (
         <div className={sideBarClass}>
-            <button onClick={handleToggle}>
-                <FaHotdog  style={{ color: "#7b7b7b", width: "40px", height: "40px" }} />
+            <button onClick={handleToggle} className="hotdog">
+                <FaHotdog  style={{ color: "#7b7b7b", width: "40px", height: "40px", border: "none", background: "transparent" }} />
             </button>
             <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
                 <li>
@@ -25,7 +25,7 @@ const SideBar = ({ navbarOpen, closeMenu, handleToggle }) => {
                         activeClassName="active-link"
                         onClick={closeMenu}
                     >
-                        My Recipe Book
+                        My Recipe Cards
                     </Link>
                 </li>
             </ul>
