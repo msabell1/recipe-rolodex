@@ -10,7 +10,9 @@ const SearchResults = ({
 }) => {
     return (
         <>
-            <h1>Search for new recipes</h1>
+            <header>
+                <h1>Search Recipes by Ingredient</h1>
+            </header>
             <form onSubmit={handleSearchSubmit}>
                 <input
                     type="text"

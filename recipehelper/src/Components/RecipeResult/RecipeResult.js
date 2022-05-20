@@ -25,7 +25,10 @@ const RecipeResult = ({ selectedRecipe, handleAddToRecipeCardList }) => {
     const createIngredientList = (ingredient, index) => {
         return (
             <tr key={index}>
-                <OverlayTrigger trigger="click" placement="right" rootClose overlay={handleIngredientClick(ingredient)}>
+                <OverlayTrigger
+                    trigger="click" placement="right"
+                    rootClose overlay={handleIngredientClick(ingredient)}
+                >
                     <td >{ingredient.food}</td>
                 </OverlayTrigger>
                 <td>{ingredient.quantity}</td>
@@ -48,7 +51,6 @@ const RecipeResult = ({ selectedRecipe, handleAddToRecipeCardList }) => {
 
     return (
         <div>
-            {/* This is just for proof of concept */}
             <header className="recipe-header">
                 <img src={recipe.recipe.images.SMALL.url} />
                 <div className="recipe-descriptions">

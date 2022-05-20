@@ -50,16 +50,16 @@ function App() {
       .catch(err => console.error(err));
   };
 
+  useEffect(() => {
+    fetchAllRecipes();
+  }, [queryValue])
+
   const handleSelectedRecipe = (id) => {
     setSelectedRecipe(fetchResults.filter((recipe) => {
       return recipe.recipe.uri === id
     })[0]);
     setQueryValue(null);
   }
-
-  useEffect(() => {
-    fetchAllRecipes();
-  }, [queryValue])
 
   const handleSearchChange = (event) => {
     setSearchValue(event.target.value);
