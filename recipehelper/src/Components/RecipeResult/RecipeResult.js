@@ -3,6 +3,9 @@ import Table from 'react-bootstrap/Table'
 import Popover from 'react-bootstrap/Popover'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Accordion from 'react-bootstrap/Accordion'
+import Button from 'react-bootstrap/Button'
+import './RecipeResult.css'
+
 
 const RecipeResult = ({ selectedRecipe, handleAddToRecipeCardList }) => {
 
@@ -33,24 +36,33 @@ const RecipeResult = ({ selectedRecipe, handleAddToRecipeCardList }) => {
         )
     }
 
-    // const createIngredientNutritionList =(recipe) => {
-    //     return(
-    //         0
-
-
-    //     )
-    // }
-
+    const createIngredientNutritionList = (nutritionalFact, index) => {
+        return (
+            <tr key={index}>
+                <td>{recipe.recipe.totalNutrients[nutritionalFact].label}</td>
+                <td>{(recipe.recipe.totalNutrients[nutritionalFact].quantity).toFixed(2)}</td>
+                <td>{recipe.recipe.totalNutrients[nutritionalFact].unit}</td>
+            </tr>
+        )
+    }
 
     return (
-        <div className="recipe-result-grid">
+        <div>
             {/* This is just for proof of concept */}
-            <h2>{recipe.recipe.label}</h2>
-            <img src={recipe.recipe.images.SMALL.url} />
-            <h3>Cuisine: {recipe.recipe.cuisineType}</h3>
+            <header className="recipe-header">
+                <img src={recipe.recipe.images.SMALL.url} />
+                <div className="recipe-descriptions">
+                    <h2>{recipe.recipe.label}</h2>
+                    <h3>Cuisine: {recipe.recipe.cuisineType}</h3>
+                    <h3>Recipe source: <a href={recipe.recipe.url} target='_blank'>{recipe.recipe.source}</a></h3>
+                </div>
+            </header>
+            <Button variant="primary" onClick={() => handleAddToRecipeCardList(recipe)}>
+                Save To Recipe Cards
+            </Button>
             <Accordion>
                 <Accordion.Item eventKey="0">
-                    <Accordion.Header>Ingredients</Accordion.Header>
+                    <Accordion.Header><h3>Ingredients</h3></Accordion.Header>
                     <Accordion.Body>
                         <Table striped bordered hover size="sm">
                             <thead>
@@ -69,28 +81,23 @@ const RecipeResult = ({ selectedRecipe, handleAddToRecipeCardList }) => {
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
-                    <Accordion.Header>Nutritional Facts</Accordion.Header>
+                    <Accordion.Header><h3>Nutritional Facts</h3></Accordion.Header>
                     <Accordion.Body>
                         <Table striped bordered hover size="sm">
                             <thead>
                                 <tr>
-                                    <th>Ingredient</th>
+                                    <th>Nutrient</th>
                                     <th>Qty</th>
                                     <th>Unit</th>
-                                    <th>Weight</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* Insert Nutritional Facts */}
+                                {Object.keys(recipe.recipe.totalNutrients).map(createIngredientNutritionList)}
                             </tbody>
                         </Table>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
-
-
-
-
         </div>
     )
 }

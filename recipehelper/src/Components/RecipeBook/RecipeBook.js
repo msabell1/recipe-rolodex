@@ -1,7 +1,26 @@
-import { Switch, Routes, Route, Link, Navigate } from "react-router-dom"
-import React, { useState, useEffect } from 'react';
+import RecipeList from '../RecipeList/RecipeList.js';
 
-const RecipeBook = (props) => {
-    return <h1>This is the recipe book page</h1>
+const RecipeBook = ({
+    myRecipes,
+    handleSelectedRecipe,
+    handleAddToRecipeCardList
+}) => {
+    const headerMessage = myRecipes.length > 0 ?
+        `You have ${myRecipes.length} recipes in your rolodex` :
+        'Your recipe rolodex is currently empty...';
+
+    return (
+        <>
+            <header>
+                <h1>{headerMessage}</h1>
+            </header>
+            <RecipeList
+                fetchResults={myRecipes}
+                handleSelectedRecipe={handleSelectedRecipe}
+                handleAddToRecipeCardList={handleAddToRecipeCardList}
+            />
+        </>
+
+    )
 }
 export default RecipeBook;

@@ -30,6 +30,7 @@
     color: purple
 }
 
+
 @media screen and (min-width: 759px) {
     .sideBar {
         display: none;

@@ -14,15 +14,19 @@ function App() {
 
   const [myRecipes, setMyRecipes] = useState([]);
 
-  const [navbarOpen, setNavbarOpen] = useState(false)
+  // handleAddToRecipeCardList 
+  const handleAddToRecipeCardList = (recipe) => {
+    setMyRecipes([...myRecipes, recipe]);
+    console.log(myRecipes)
+  }
 
+  // handleRemoveFromRecipeBook 
 
-  // handleAddToRecipeBook 
-
-  // handleRemoveFromRecipeBook totorial #13
 
 
   // functions for NavBar and SideBar Components
+  const [navbarOpen, setNavbarOpen] = useState(false)
+
   const handleToggle = () => {
     setNavbarOpen(navBarState => !navBarState)
   }
@@ -37,15 +41,12 @@ function App() {
   const [searchValue, setSearchValue] = useState('');
   const [selectedRecipe, setSelectedRecipe] = useState({});
 
-  const handleSelectedRecipe = (id) => {
-    console.log(`handleSelectedRecipe selected for ${id}`);
 
+  const handleSelectedRecipe = (id) => {
     setSelectedRecipe(fetchResults.filter((recipe) => {
       return recipe.recipe.uri === id
     })[0]);
-
     console.log('selectedRecipe: ', selectedRecipe);
-
     setFetchResults([]);
     setQueryValue(null);
   }
@@ -79,17 +80,23 @@ function App() {
   }
 
 
-  const handleAddToRecipeCardList =(recipe) => {
-    setMyRecipes([...myRecipes,recipe]);
-  }
+
 
 
   return (
     <div className="App">
       <div>
         <div>
-        <Navbar handleToggle={handleToggle} closeMenu={closeMenu} />
-        <SideBar closeMenu={closeMenu} navbarOpen={navbarOpen} />
+          <Navbar
+            handleToggle={handleToggle}
+            closeMenu={closeMenu}
+            navbarOpen={navbarOpen}
+          />
+          <SideBar
+            handleToggle={handleToggle}
+            closeMenu={closeMenu}
+            navbarOpen={navbarOpen}
+          />
         </div>
         <div>
           <Routes>
@@ -107,7 +114,12 @@ function App() {
                 />}
             />
             <Route path='/recipebook/'
-              element={<RecipeBook />}
+              element={
+                <RecipeBook
+                  myRecipes={myRecipes}
+                  handleSelectedRecipe={handleSelectedRecipe}
+                  handleAddToRecipeCardList={handleAddToRecipeCardList}
+                />}
             />
             <Route path='/recipe/'
               element={

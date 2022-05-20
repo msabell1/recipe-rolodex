@@ -1,6 +1,12 @@
 import RecipeList from '../RecipeList/RecipeList';
 
-const SearchResults = ({ handleSelectedRecipe, handleSearchSubmit, fetchResults, handleSearchChange, searchValue }) => {
+const SearchResults = ({
+    handleSelectedRecipe,
+    handleSearchSubmit,
+    fetchResults,
+    handleSearchChange,
+    searchValue,
+    handleAddToRecipeCardList }) => {
     return (
         <>
             <h1>Search for new recipes</h1>
@@ -17,6 +23,7 @@ const SearchResults = ({ handleSelectedRecipe, handleSearchSubmit, fetchResults,
                 <RecipeList
                     fetchResults={fetchResults}
                     handleSelectedRecipe={handleSelectedRecipe}
+                    handleAddToRecipeCardList={handleAddToRecipeCardList}
                 />
 
             </div>

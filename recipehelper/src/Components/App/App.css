@@ -15,10 +15,24 @@ Link {
   text-decoration: none;
 }
 
+.haburger-icon {
+  background: transparent;
+    border: none;
+}
 
 .menuNav li:first-child {
   margin-top: 7rem;
 }
+
+header .recipe-header {
+  display: inline;
+}
+
+.recipe-descriptions {
+  display: block;
+}
+
+
 
 @media screen and (min-width: 759px) {
   .side-drawer {
