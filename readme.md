@@ -34,34 +34,34 @@ recipe or deciding what to eat for dinner.
 #### Screenshots
 
 - Landing Page - mobile
-![Landing Page - mobile]('./screenshots/Landing\ page\ -mobile.png')
+![Landing Page - mobile](./screenshots/Landing\ page\ -mobile.png)
 
 - Hamburger Manu 
-![Hamburger Manu]('./screenshots/Hamburger\ menu\ -\ mobile.png')
+![Hamburger Manu](./screenshots/Hamburger\ menu\ -\ mobile.png)
 
 - Search Page - mobile pre-search
-![Search Page - mobile pre-search]('./screenshots/Search\ Page\ -\ pre-search.png')
+![Search Page - mobile pre-search](./screenshots/Search\ Page\ -\ pre-search.png)
 
 - Search Page - mobile post-search
-![Search Page - mobile post-search]('./screenshots/Search\ Page\ -\ mobile\ -\ post-search.png')
+![Search Page - mobile post-search](./screenshots/Search\ Page\ -\ mobile\ -\ post-search.png)
 
 - Search Page - desktop post-search
-![Search Page - desktop post-search]('./screenshots/Search\ Page\ -\ desktop\ -post-search.png')
+![Search Page - desktop post-search](./screenshots/Search\ Page\ -\ desktop\ -post-search.png)
 
 - Individual Recipe - desktop
-![Individual Recipe - desktop]('./screenshots/Individual\ Recipe\ -\ Desktop.png')
+![Individual Recipe - desktop](./screenshots/Individual\ Recipe\ -\ Desktop.png)
 
 - Individual Recipe - ingredient acordian
-![Individual Recipe - ingredient acordian]('./screenshots/Individual\ Recipe\ -\ Ingredient\ Accordian.png')
+![Individual Recipe - ingredient acordian](./screenshots/Individual\ Recipe\ -\ Ingredient\ Accordian.png)
 
 - Individual Recipe - ingredient popover
-![Individual Recipe - ingredient popover]('./screenshots/Individual\ Recipe\ -\ Ingredient\ Accordian\ -\ popover\ image.png')
+![Individual Recipe - ingredient popover](./screenshots/Individual\ Recipe\ -\ Ingredient\ Accordian\ -\ popover\ image.png)
 
 - Individual Recipe - nutrition acordian
-![Individual Recipe - nutrition acordian]('./screenshots/Individual\ Recipe\ -\ Nutrition\ Accordian.png')
+![Individual Recipe - nutrition acordian](./screenshots/Individual\ Recipe\ -\ Nutrition\ Accordian.png)
 
 - Saved Recipes
-![Saved Recipes]('./screenshots/Saved\ Recipes.png')
+![Saved Recipes](./screenshots/Saved\ Recipes.png)
 
 ---
 

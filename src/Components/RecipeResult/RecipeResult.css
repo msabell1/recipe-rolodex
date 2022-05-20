@@ -1,0 +1,12 @@
+header .recipe-header {
+    display: inline;
+}
+
+.recipe-descriptions {
+    display: block;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: rgb(171, 200, 241); 
+ }

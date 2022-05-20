@@ -1,0 +1,13 @@
+.card {
+    min-width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+@media (min-width: 40em) {
+    .split {
+        display: flex;
+        gap: 2em;
+    }
+}
