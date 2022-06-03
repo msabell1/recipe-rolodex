@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/msabell1/recipe-rolodex/static/css/main.99eff52b.css",
-    "main.js": "/msabell1/recipe-rolodex/static/js/main.cc837f65.js",
-    "static/js/787.a5014fe0.chunk.js": "/msabell1/recipe-rolodex/static/js/787.a5014fe0.chunk.js",
-    "index.html": "/msabell1/recipe-rolodex/index.html",
-    "main.99eff52b.css.map": "/msabell1/recipe-rolodex/static/css/main.99eff52b.css.map",
-    "main.cc837f65.js.map": "/msabell1/recipe-rolodex/static/js/main.cc837f65.js.map",
-    "787.a5014fe0.chunk.js.map": "/msabell1/recipe-rolodex/static/js/787.a5014fe0.chunk.js.map"
+    "main.css": "/recipe-rolodex/static/css/main.99eff52b.css",
+    "main.js": "/recipe-rolodex/static/js/main.dc876870.js",
+    "static/js/787.a5014fe0.chunk.js": "/recipe-rolodex/static/js/787.a5014fe0.chunk.js",
+    "index.html": "/recipe-rolodex/index.html",
+    "main.99eff52b.css.map": "/recipe-rolodex/static/css/main.99eff52b.css.map",
+    "main.dc876870.js.map": "/recipe-rolodex/static/js/main.dc876870.js.map",
+    "787.a5014fe0.chunk.js.map": "/recipe-rolodex/static/js/787.a5014fe0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.99eff52b.css",
-    "static/js/main.cc837f65.js"
+    "static/js/main.dc876870.js"
   ]
 }
